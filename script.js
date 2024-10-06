@@ -1,8 +1,8 @@
-// Select the burger menu and navigation links
+// Get burger icon and nav links
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
-// Toggle the visibility of the nav-links when the burger is clicked
+// Add event listener to toggle 'show' class on nav links
 burger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active'); // Add or remove the "nav-active" class
+    navLinks.classList.toggle('show');
 });

@@ -1,0 +1,870 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles for dark mode */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #C0C0C0; /* Light text color */
+    line-height: 1.6;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: #C0C0C0; /* Accent color for links */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #C0C0C0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1f1f1f; /* Dark navigation background */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 32px;
+    color: #ffffff; /* White logo text */
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    color: #e0e0e0; /* Light text for links */
+}
+
+.nav-links a:hover {
+    color: #A97F00; /* Accent color on hover */
+}
+
+/* Burger menu styles for mobile */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0; /* Light color for burger lines */
+    margin: 4px;
+}
+
+/* Hero Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends in the original position */
+    }
+}
+
+
+/* Hero Section */
+#hero {
+    height: 100vh; /* Full viewport height */
+    background-image: url('images/Background6.jpg'); /* Replace with your dark mode banner */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Fade-in for Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-out forwards; /* 2-second fade-in */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay to make text stand out */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Hero logo image */
+.hero-logo {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Call-to-action button with silver background */
+.cta-button {
+    background-color: #C0C0C0; /* Silver background */
+    color: #ffffff; /* White text */
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b0b0b0; /* Slightly darker silver on hover */
+    transform: translateY(-5px); /* Adds a slight lift effect on hover */
+}
+
+/* Services Section */
+#services {
+    padding: 80px 5%;
+    background-color: #1e1e1e; /* Dark background for services */
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 36px;
+    color: #A97F00; /* Accent color */
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    width: 30%;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.service-item img {
+    width: 100%; /* Ensure the image takes the full width of the container */
+    height: 300px; /* Set a fixed height to make all images uniform */
+    object-fit: cover; /* Ensures the image fills the container and crops the excess */
+    border-radius: 10px; /* Optional: keeps the rounded corners */
+}
+
+.service-item h3 {
+    margin: 20px 0 10px;
+    color: #ffffff; /* White for service headings */
+}
+
+.service-item p {
+    color: #e0e0e0; /* Light text for service description */
+}
+
+/* About Section */
+#about {
+    padding: 80px 5%;
+    background-color: #121212; /* Dark background for about */
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #A97F00; /* Accent color */
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 5%;
+    background-color: #1e1e1e; /* Dark background for contact */
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    color: #A97F00;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+/* Email link styling */
+.email-link {
+    color: #C0C0C0; /* Silver color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #b0b0b0; /* Slightly darker silver on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .service-list {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Call-to-action button with silver background */
+.cta-button {
+    background-color: #C0C0C0; /* Silver background */
+    color: #ffffff; /* White text */
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b0b0b0; /* Slightly darker silver on hover */
+    transform: translateY(-5px); /* Adds a slight lift effect on hover */
+}
+
+/* Services Section */
+#services {
+    padding: 80px 5%;
+    background-color: #1e1e1e; /* Dark background for services */
+    text-align: center;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.service-item {
+    width: 30%;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service-item h3 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    margin: 20px 0 10px;
+    color: #ffffff; /* White for service headings */
+}
+
+.service-item p {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #e0e0e0; /* Light text for service description */
+}
+
+/* About Section */
+#about {
+    padding: 80px 5%;
+    background-color: #121212; /* Dark background for about */
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 5%;
+    background-color: #1e1e1e; /* Dark background for contact */
+    text-align: center;
+}
+
+/* Email link styling */
+.email-link {
+    color: #C0C0C0; /* Silver color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #b0b0b0; /* Slightly darker silver on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .service-list {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Centered Elegant Heading for About Me */
+#about-me {
+    padding-top: 120px; /* Adjust to the height of your navigation bar */
+}
+
+#about-me h1 {
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: #C0C0C0;
+    font-style: italic;
+    text-align: center;
+}
+
+/* About Container: Profile Photo and Bio */
+.about-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    padding: 0 10%; /* Add padding to bring the content in */
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 100%; /* Allow the image to take up the available width */
+    max-width: 500px; /* Restrict the image from growing larger than 500px */
+    height: auto; /* Maintain the aspect ratio automatically */
+    border-radius: 10px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+/* Bio Text */
+.bio-text {
+    flex: 1;
+    color: #e0e0e0;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 5%; /* Add padding to give the text breathing room */
+}
+
+/* Blockquote Styling */
+blockquote {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 32px;
+    font-style: italic;
+    color: #A97F00;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-left: 4px solid #A97F00;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the blockquote */
+}
+
+/* Key Message Section */
+.key-message {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 10%; /* Padding to make the content more centered */
+    background-color: #1f1f1f;
+    color: #C0C0C0;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 1000px;
+    margin: 0 auto; /* Center the key message */
+}
+
+.button {
+    text-align: center; /* Center content within the bio-text container */
+}
+
+
+/* Additional Text Section */
+.additional-text {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: 0 auto; /* Center the key message */
+    max-width: 1000px
+}
+
+/* Call-to-action button */
+.cta-button {
+    background-color: #A97F00;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #8A6700;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Social media links */
+.social-media {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #C0C0C0;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #8A6700;
+}
+
+/* Email link styling */
+.email-link {
+    color: #C0C0C0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #8A6700;
+}
+
+/* Add a gap after specific paragraphs */
+.gap-after {
+    margin-bottom: 30px; /* Adjust the size as per your preference */
+}
+
+
+
+/* Services Page
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Header Section */
+#services-header {
+    background-color: #1f1f1f;
+    padding: 100px 20%;
+    text-align: center;
+}
+
+#services-header h1 {
+    color: #A97F00; /* Gold color */
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Main Services Section */
+.service-section {
+    padding: 80px 5%;
+}
+
+.service-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Image and text layout - default (image left, text right) */
+.service-left {
+    flex-direction: row;
+}
+
+/* Reverse layout (image right, text left) */
+.service-right {
+    flex-direction: row-reverse;
+}
+
+/* Styling for service images */
+.service-photo {
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Styling for text */
+.service-text {
+    width: 45%;
+    padding: 0;
+}
+
+.service-text h2 {
+    font-size: 32px;
+    color: #A97F00;
+    margin-bottom: 20px;
+}
+
+.service-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+/* Call-to-action button styling */
+.cta-button {
+    background-color: #A97F00;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #8A6700;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #A97F00;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #8A6700;
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #C0C0C0;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #A97F00;
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Stack items vertically on mobile */
+    .service-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-photo, .service-text {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .service-photo {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Wardrobe-edits
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo h1 {
+    font-size: 24px;
+    color: #C0C0C0;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #A97F00;
+}
+
+.burger {
+    display: none;
+}
+
+/* Wardrobe Edits Section */
+.wardrobe-edits-section {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    justify-content: space-between;
+    padding: 60px 5%;
+    background-color: #1f1f1f;
+}
+
+.wardrobe-photo {
+    width: 45%; /* Image takes up 45% of the section */
+    height: auto;
+    max-height: 500px; /* Limit the height of the image */
+    border-radius: 10px;
+}
+
+.wardrobe-text {
+    width: 45%; /* Text takes up 45% of the section */
+    text-align: left;
+    padding-left: 20px; /* Add padding between text and image */
+}
+
+.wardrobe-text h2 {
+    font-size: 36px;
+    color: #A97F00;
+    margin-bottom: 20px;
+}
+
+.wardrobe-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Additional Details Section */
+.additional-details-section {
+    padding: 60px 5%;
+}
+
+.additional-details-section h3 {
+    font-size: 28px;
+    margin-top: 40px;
+    color: #A97F00;
+}
+
+.additional-details-section p,
+.additional-details-section ul {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.additional-details-section ul {
+    list-style: disc;
+    margin-left: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 24px;
+    color: #A97F00;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #C0C0C0;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #A97F00;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .wardrobe-edits-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wardrobe-photo,
+    .wardrobe-text {
+        width: 100%;
+    }
+
+    .wardrobe-photo {
+        margin-bottom: 20px;
+    }
+
+    .wardrobe-text {
+        padding-left: 0;
+    }
+}

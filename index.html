@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Empower Your Style</title>
         <link rel="stylesheet" href="style.css"> <!-- This should point to your CSS file -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body>
 
@@ -17,10 +18,14 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
+                
+                <!-- Comment out the rest of the links -->
+                <!--
                 <li><a href="services.html">Services</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                -->
             </ul>
             <div class="burger">
                 <div></div>
@@ -49,7 +54,7 @@
                 <div class="service-item">
                     <img src="images/Personalised.jpg" alt="Personal Shopping Services in Auckland">
                     <h3>Personal Shopping</h3>
-                    <p>Elevate your style with personalized fashion advice.</p>
+                    <p>Elevate your style with personalized fashion advice for both women and men.</p>
                 </div>
                 <div class="service-item">
                     <img src="images/Wardrobe.png" alt="Wardrobe Edits in Auckland">
@@ -59,7 +64,7 @@
                 <div class="service-item">
                     <img src="images/Packages.jpg" alt="Event Styling and Styling Packages">
                     <h3>Styling Packages</h3>
-                    <p>Are you looking for a complete solution to achieve your desired style outcome?</p>
+                    <p>Are you looking for a complete solution to achieve your desired style outcome? Get in touch and we can design something to meet your goals and budget.</p>
                 </div>
             </div>
         </section>
@@ -70,18 +75,25 @@
             <p>I believe that style is a reflection of who you are. At Empower Your Style, I offer bespoke styling services tailored to each client’s unique taste, helping you feel confident in your wardrobe choices.</p>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:info@empoweryourstyle.com">info@empoweryourstyle.nz</a></p>
-            <p>Phone: +62 27 205 7811</p>
-        </section>
+       
 
     </main>
 
     <!-- Footer -->
+ 
     <footer>
-        <p>&copy; 2024 Empower Your Style. All rights reserved.</p>
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:info@empoweryourstyle.com" class="email-link">info@empoweryourstyle.com</a></p>
+        <p>Phone: <a href="tel:+64277057811" class="phone-link">+64 27 705 7811</a></p>
+    
+        <!-- Social media links -->
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.pinterest.com" target="_blank" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright-text">&copy; 2024 Empower Your Style. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

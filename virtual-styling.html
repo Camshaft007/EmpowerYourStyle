@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover Emilia's Personal Shopping service. Let Emilia guide you on a shopping trip tailored to your style, personality, and budget.">
+        <meta name="keywords" content="Personal Stylist, Personal Shopping, Style Consultation, Auckland Stylist, Fashion Consultant">
+        <meta name="author" content="Empower Your Style">
+        <title>VIP
+         Package | Empower Your Style</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+
+   <!-- Navigation Bar -->
+   <div id="navigation-placeholder"></div>
+   <script>
+       fetch('NavigationBar.html')
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById('navigation-placeholder').innerHTML = data;
+               // Load script.js after the navigation is inserted
+               const script = document.createElement('script');
+               script.src = 'script.js';
+               document.body.appendChild(script);
+           });
+   </script>
+
+
+
+
+    <!-- Personal Shopping Section -->
+    <section class="service-section">
+        <div class="service-container">
+            <img src="images/Packages.jpg" alt="Virtual Styling Package" class="service-photo">
+            <div class="service-text">
+            
+                <h2>Virtual Styling | Package</h2>
+                <p>Are you tired of feeling uninspired by your wardrobe, but live too far away from the shops to find your fashion fix? Fear not! I've got you covered with my virtual styling package, designed to help you look and feel fabulous from the comfort of your own living room.</p>
+                <p class="gap-after"></p>
+                <p>We'll start with a virtual wardrobe edit session via What's App, where we'll discuss your personal style, lifestyle and fashion goals. From there, we'll reorganize your wardrobe to maximize its potential, identifying any missing key pieces that will enhance your everyday style.</p>
+                <p class="gap-after"></p>
+                <p>Using your budget, body shape, style category, and lifestyle as a guide, I'll then create a personalized shopping list just for you, complete with clickable links to make shopping a breeze. During the process, I'll share my expert insights and tricks on how to shop smarter and maximize your personal style.</p>
+                <p class="gap-after"></p>
+                <p>So whether you're a busy professional, a stay-at-home mom, or someone who simply wants to look their best, I'm here to help, no matter where you are.</p>
+                <p class="gap-after"></p>
+                <h3>Package Includes</h3>
+            <ul>
+                <li>30 Minute Virtual Style Consultation via What's App</li>
+                <li>1 Hour Virtual Wardrobe Review</li>
+                <li>Shopping Hit list of pieces to get with clickable links – 3 hours online research – stylist only, sent to you within 48 hours</li>
+                <li>Body Shape and Style category review</li>
+            
+            </div>
+        </div>
+    
+    </section>
+    <!-- Package Links Section -->
+    <section class="package-links">
+        <h3>Explore More Packages</h3>
+        <div class="package-buttons">
+            <a href="kickstart.html" class="package-button">Style Kickstart</a>
+            <a href="refresh-my-style.html" class="package-button">Refresh My Style</a>
+            <a href="empowerment.html" class="package-button">Total Empowerment</a>
+            
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+
+   
+</body>
+</html>

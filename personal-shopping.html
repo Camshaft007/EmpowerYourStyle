@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover Emilia's Personal Shopping service. Let Emilia guide you on a shopping trip tailored to your style, personality, and budget.">
+        <meta name="keywords" content="Personal Stylist, Personal Shopping, Style Consultation, Auckland Stylist, Fashion Consultant">
+        <meta name="author" content="Empower Your Style">
+        <title>Personal Shopping | Empower Your Style</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="navigation-placeholder"></div>
+    <script>
+        fetch('NavigationBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+                // Load script.js after the navigation is inserted
+                const script = document.createElement('script');
+                script.src = 'script.js';
+                document.body.appendChild(script);
+            });
+    </script>
+
+    <!-- Personal Shopping Section -->
+    <section class="service-section">
+        <div class="service-container">
+            <img src="images/personal-shopping.jpg" alt="Personal Shopping Service" class="service-photo">
+            <div class="service-text">
+                <h2>Services | Personal Shopping</h2>
+                <p>Are you feeling lost in your personal style and wearing clothes that don't make you feel amazing every day? Do you find shopping stressful and overwhelming?</p>
+                <p class="gap-after"></p>
+                <p>No need to worry, I'm here to help! Let's embark on a shopping trip where I'll share with you my knowledge of where to shop and how to create outfits that truly reflect your unique personality and style.</p>
+                <p class="gap-after"></p>
+                <p>This service is perfect for anyone who wants to elevate their style game but may not know where to start with their next shopping trip or has limited options in their current wardrobe. In no time, you'll confidently show up as the best version of yourself for any occasion.</p>
+                <p class="gap-after"></p>
+                <p>Don't let your wardrobe hold you back from enjoying upcoming events, such as weddings, birthdays, or other special moments in life with your loved ones. Together, we can build a strong and functional wardrobe foundation, allowing you to feel more confident and comfortable in your own skin. After our Initial Style Consultation, I will curate a personalized shopping itinerary based on your style and pre-select items and outfits that are sure to suit your taste.</p>
+                <p class="gap-after"></p>
+                With my expertise and attention to detail, I'll guide you on the best fit, style, and colors that complement your unique body and personality. The result will be a fresh, timeless wardrobe that is uniquely yours and aligned with your true self. Let's work together to create a wardrobe that you'll love and feel confident in, so you can show up as the best version of yourself every day.</p>
+                <p class="gap-after"></p>
+                <p>The Personal Shopping service can take anywhere between 3-5 hours depending on your goals and the size of your shopping list.</p>
+            </div>
+        </div>
+        <div class="service-container">
+        <div class="service-text-additional">
+            <h3>How does it work?</h3>
+            <p><strong>STYLE CONSULTATION</strong><br>
+            When you work with me, we begin each package with an in-depth Style Consultation. This is a crucial starting point, as it allows me to gain an understanding of your personal style, lifestyle, likes and dislikes, and of course your budget for the whole experience. During this 30-minute session, we'll delve into what makes you unique, and what your wardrobe needs are, to ensure that the looks I create for you are tailored to your individual style. This step can be done virtually or in person. As personal styling is an intimate and personal service, my top priority is to ensure that you feel comfortable throughout the entire process.</p>
+            <p class="gap-after">
+            <h3>What will you gain from this?</h3>
+            <ul>
+                <li>Strong wardrobe foundation that will keep on giving</li>
+                <li>Shop Smart Confidence - knowing where and what to shop for</li>
+                <li>Style tips</li>
+                <li>Colour and shape analysis</li>
+            </ul>
+            
+            <p>This service also offers an add-on - <strong>LOOK BOOK</strong> option. A Look Book is like your own personal fashion diary! We create it together during our shopping session by mixing and matching your new pieces so that you are left with outfit combinations that perfectly represent your style. Imagine waking up every morning and having a virtual closet to flip through for your outfit inspiration - that's what a Look Book can do for you.</p>
+            <div class="key-message-box">
+                <p class="mission-text">
+                <em> "Say goodbye to overwhelming shopping trips and uninspiring outfits. Let's bring excitement back into your wardrobe and make shopping and getting dressed FUN again!"<em>
+                </p>
+        
+                </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+
+
+</body>
+</html>

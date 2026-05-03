@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empower Your Style — Personal Stylist Auckland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #F7F2EA; --warm-white: #FDFAF5; --ink: #1A1814;
+  --stone: #6B6358; --sage: #3D5247; --gold: #B8965A;
+  --blush: #E8D5C4; --terracotta: #C47A5A;
+  --pad: 1.5rem;
+}
+@media (min-width: 600px)  { :root { --pad: 2.5rem; } }
+@media (min-width: 1000px) { :root { --pad: 5rem; } }
+@media (min-width: 1280px) { :root { --pad: 8rem; } }
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+/* ── SHARED ── */
+.section-label {
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.section-label::before { content:''; width:1.5rem; height:1px; background:var(--gold); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem); font-weight:300; line-height:1.15;
+}
+.section-title em { font-style:italic; color:var(--terracotta); }
+.btn-primary {
+  display:inline-block; padding:0.9rem 2rem;
+  background:var(--sage); color:var(--warm-white);
+  font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:0.14em;
+  text-transform:uppercase; text-decoration:none; border:1px solid var(--sage);
+  transition:all 0.3s;
+}
+.btn-primary:hover { background:var(--ink); border-color:var(--ink); }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem var(--pad);
+  transition:background 0.4s;
+}
+nav.scrolled { background:rgba(247,242,234,0.95); backdrop-filter:blur(10px); border-bottom:1px solid rgba(184,150,90,0.15); }
+.nav-logo {
+  font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600;
+  letter-spacing:0.08em; color:var(--ink); text-decoration:none; z-index:201; position:relative;
+}
+.nav-desktop { display:none; align-items:center; gap:2.5rem; }
+.nav-desktop a {
+  font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none; position:relative; padding-bottom:2px;
+}
+.nav-desktop a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--gold); transition:width 0.3s; }
+.nav-desktop a:hover::after { width:100%; }
+.nav-book {
+  font-size:0.73rem; letter-spacing:0.14em; text-transform:uppercase;
+  padding:0.55rem 1.3rem; border:1px solid var(--gold); color:var(--gold);
+  text-decoration:none; transition:all 0.3s;
+}
+.nav-book:hover { background:var(--gold); color:var(--warm-white); }
+@media (min-width:900px) { .nav-desktop { display:flex; } .hamburger { display:none !important; } }
+
+/* hamburger */
+.hamburger {
+  display:flex; flex-direction:column; gap:5px; background:none;
+  border:none; cursor:pointer; padding:4px; z-index:201; position:relative;
+}
+.hamburger span { display:block; width:24px; height:1.5px; background:var(--ink); transition:transform 0.3s, opacity 0.3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+/* mobile menu overlay */
+.mob-menu {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:var(--warm-white); flex-direction:column;
+  align-items:center; justify-content:center; gap:1.8rem;
+}
+.mob-menu.open { display:flex; }
+.mob-menu a {
+  font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300;
+  color:var(--ink); text-decoration:none; letter-spacing:0.04em;
+}
+.mob-menu .mob-cta {
+  font-family:'Jost',sans-serif; font-size:0.78rem; font-weight:400;
+  letter-spacing:0.16em; text-transform:uppercase;
+  padding:0.8rem 2rem; border:1px solid var(--gold); color:var(--gold);
+  margin-top:0.5rem;
+}
+
+/* ── HERO ── */
+.hero { background:var(--warm-white); padding-top:4.5rem; }
+.hero-img {
+  width:100%; height:56vw; min-height:220px; max-height:400px;
+  background:linear-gradient(135deg, var(--blush) 0%, #d4b8a0 50%, var(--terracotta) 100%);
+  position:relative; overflow:hidden;
+}
+.hero-img-word {
+  position:absolute; bottom:0.8rem; right:1rem;
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:4.5rem; font-weight:300; color:rgba(255,255,255,0.14);
+  line-height:1; user-select:none;
+}
+.hero-stat {
+  position:absolute; bottom:1.2rem; left:1.2rem;
+  background:var(--warm-white); padding:0.9rem 1.2rem;
+  border-left:3px solid var(--gold);
+}
+.hero-stat-n { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; line-height:1; }
+.hero-stat-l { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--stone); margin-top:0.15rem; }
+.hero-body { padding:2.2rem var(--pad) 3.5rem; }
+.hero-eye {
+  font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+  margin-bottom:1rem; display:flex; align-items:center; gap:0.7rem;
+  opacity:0; animation:fadeUp 0.8s 0.2s forwards;
+}
+.hero-eye::before { content:''; width:1.5rem; height:1px; background:var(--gold); }
+.hero-h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.6rem, 8vw, 5.5rem); font-weight:300; line-height:1.08;
+  margin-bottom:1.1rem; opacity:0; animation:fadeUp 0.9s 0.4s forwards;
+}
+.hero-h1 em { font-style:italic; color:var(--terracotta); }
+.hero-p {
+  font-size:0.95rem; line-height:1.85; color:var(--stone); max-width:46ch;
+  margin-bottom:2rem; font-weight:300; opacity:0; animation:fadeUp 0.9s 0.6s forwards;
+}
+.hero-btns {
+  display:flex; flex-direction:column; gap:0.8rem;
+  opacity:0; animation:fadeUp 0.9s 0.8s forwards;
+}
+.hero-btns .btn-primary { text-align:center; }
+.btn-outline {
+  display:flex; align-items:center; justify-content:center; gap:0.5rem;
+  padding:0.9rem; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink); text-decoration:none; border:1px solid rgba(26,24,20,0.18); transition:border-color 0.3s;
+}
+.btn-outline:hover { border-color:var(--ink); }
+.btn-outline::after { content:'→'; }
+@media (min-width:600px) {
+  .hero-btns { flex-direction:row; }
+  .hero-btns .btn-primary, .btn-outline { text-align:left; justify-content:flex-start; }
+}
+@media (min-width:1000px) {
+  .hero { display:grid; grid-template-columns:1fr 1fr; min-height:100vh; padding-top:0; }
+  .hero-img { height:auto; max-height:none; min-height:100vh; order:2; }
+  .hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to right, var(--warm-white) 0%, transparent 10%); }
+  .hero-body { order:1; display:flex; flex-direction:column; justify-content:center; padding:8rem var(--pad) 5rem; }
+  .hero-stat { bottom:5rem; left:-2rem; }
+}
+
+/* ── MARQUEE ── */
+.marquee { background:var(--sage); overflow:hidden; padding:0.7rem 0; white-space:nowrap; }
+.marquee-track { display:inline-flex; animation:marquee 22s linear infinite; }
+.m-item { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream); padding:0 2rem; }
+.m-dot { color:var(--gold); }
+
+/* ── SERVICES ── */
+.services { padding:3.5rem var(--pad); background:var(--cream); }
+.svc-head { margin-bottom:2.5rem; }
+.svc-intro { font-size:0.93rem; line-height:1.9; color:var(--stone); font-weight:300; margin-top:0.9rem; }
+.svc-grid { display:flex; flex-direction:column; gap:2px; background:rgba(0,0,0,0.06); }
+.svc-card {
+  background:var(--warm-white); padding:2rem 1.5rem;
+  position:relative; overflow:hidden; transition:transform 0.3s;
+}
+.svc-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(to right, var(--gold), var(--terracotta));
+  transform:scaleX(0); transform-origin:left; transition:transform 0.4s;
+}
+.svc-card:hover { transform:translateY(-3px); }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-n { position:absolute; top:1rem; right:1.2rem; font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgba(26,24,20,0.05); line-height:1; }
+.svc-name { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; margin:0.4rem 0 0.7rem; }
+.svc-desc { font-size:0.87rem; line-height:1.8; color:var(--stone); font-weight:300; margin-bottom:1.2rem; }
+.svc-list { list-style:none; margin-bottom:1.4rem; }
+.svc-list li { font-size:0.77rem; color:var(--stone); padding:0.32rem 0; border-bottom:1px solid rgba(0,0,0,0.05); display:flex; align-items:center; gap:0.5rem; }
+.svc-list li::before { content:'—'; color:var(--gold); }
+.svc-link { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--sage); text-decoration:none; }
+@media (min-width:700px) {
+  .svc-grid { flex-direction:row; }
+  .svc-card { flex:1; }
+}
+@media (min-width:1000px) {
+  .services { padding:6rem var(--pad); }
+  .svc-head { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:3.5rem; }
+  .svc-card { padding:2.8rem 2.2rem; }
+}
+
+/* ── ABOUT ── */
+.about { background:var(--ink); }
+.about-img {
+  height:60vw; min-height:220px; max-height:380px;
+  background:linear-gradient(160deg, #3d5247 0%, #2a3b32 40%, #1a2820 100%);
+  position:relative; overflow:hidden;
+}
+.about-dots { position:absolute; inset:0; background-image:radial-gradient(circle, rgba(184,150,90,0.12) 1px, transparent 1px); background-size:28px 28px; }
+.about-qt {
+  position:absolute; bottom:1.5rem; right:1.5rem;
+  background:var(--gold); padding:1.2rem 1.4rem; max-width:230px;
+}
+.about-qt p { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--warm-white); line-height:1.5; margin-bottom:0.4rem; }
+.about-qt span { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.6); }
+.about-txt { padding:3rem var(--pad); }
+.about-txt .section-label { color:var(--gold); }
+.about-txt .section-label::before { background:var(--gold); }
+.about-txt .section-title { color:var(--warm-white); }
+.about-p { font-size:0.93rem; line-height:1.9; color:rgba(247,242,234,0.65); font-weight:300; margin:1.4rem 0 2rem; }
+.pillars { display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-bottom:2rem; }
+.pillar { padding:0.9rem 1.1rem; border:1px solid rgba(184,150,90,0.25); }
+.pillar-n { font-size:0.67rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:0.2rem; }
+.pillar-d { font-size:0.8rem; color:rgba(247,242,234,0.5); font-weight:300; }
+@media (min-width:1000px) {
+  .about { display:grid; grid-template-columns:5fr 6fr; }
+  .about-img { height:auto; max-height:none; min-height:0; }
+  .about-qt { bottom:4rem; right:-1.5rem; max-width:270px; padding:1.8rem 2rem; }
+  .about-qt p { font-size:1.2rem; }
+  .about-txt { padding:6rem 5rem 6rem var(--pad); display:flex; flex-direction:column; justify-content:center; }
+  .about-p { max-width:50ch; }
+}
+
+/* ── PROCESS ── */
+.process { padding:3.5rem var(--pad); background:var(--blush); text-align:center; }
+.proc-head { margin-bottom:2.5rem; }
+.proc-head .section-label { justify-content:center; }
+.proc-head .section-label::before { display:none; }
+.proc-steps { display:flex; flex-direction:column; gap:2rem; }
+.proc-step {}
+.step-circle {
+  width:3.5rem; height:3.5rem; border-radius:50%;
+  background:var(--warm-white); border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1.1rem;
+  font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--gold);
+}
+.step-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--ink); margin-bottom:0.5rem; }
+.step-desc { font-size:0.84rem; line-height:1.7; color:var(--stone); font-weight:300; }
+@media (min-width:600px) {
+  .proc-steps { flex-direction:row; flex-wrap:wrap; }
+  .proc-step { flex:1 1 160px; }
+}
+@media (min-width:1000px) {
+  .process { padding:6rem var(--pad); }
+  .proc-head { margin-bottom:4rem; }
+  .proc-steps { flex-wrap:nowrap; position:relative; }
+  .proc-steps::before { content:''; position:absolute; top:1.75rem; left:12%; right:12%; height:1px; background:linear-gradient(to right, transparent, var(--gold), var(--gold), transparent); }
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials { padding:3.5rem var(--pad); background:var(--warm-white); }
+.test-head { text-align:center; margin-bottom:2.5rem; }
+.test-head .section-label { justify-content:center; }
+.test-head .section-label::before { display:none; }
+.test-grid { display:flex; flex-direction:column; gap:2px; background:rgba(0,0,0,0.04); }
+.test-card { background:var(--warm-white); padding:2rem 1.5rem; transition:background 0.3s; }
+.test-card:hover { background:var(--cream); }
+.test-stars { color:var(--gold); font-size:0.75rem; margin-bottom:1rem; }
+.test-q { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; font-weight:300; line-height:1.7; color:var(--ink); margin-bottom:1.3rem; }
+.test-auth { display:flex; align-items:center; gap:0.9rem; }
+.test-av { width:2.2rem; height:2.2rem; border-radius:50%; flex-shrink:0; background:linear-gradient(135deg, var(--blush), var(--terracotta)); }
+.test-name { font-size:0.82rem; font-weight:500; }
+.test-role { font-size:0.7rem; color:var(--stone); }
+@media (min-width:800px) {
+  .test-grid { flex-direction:row; }
+  .test-card { flex:1; }
+}
+@media (min-width:1000px) {
+  .testimonials { padding:6rem var(--pad); }
+  .test-head { margin-bottom:3.5rem; }
+  .test-card { padding:2.8rem 2.2rem; }
+}
+
+/* ── CTA / BOOKING ── */
+.booking { padding:3.5rem var(--pad); background:var(--sage); }
+.booking .section-label { color:rgba(184,150,90,0.85); }
+.booking .section-label::before { background:rgba(184,150,90,0.85); }
+.booking .section-title { color:var(--warm-white); }
+.book-desc { font-size:0.93rem; line-height:1.85; color:rgba(247,242,234,0.65); font-weight:300; margin:1.2rem 0 2rem; }
+.book-contact { display:flex; flex-direction:column; gap:0.8rem; }
+.book-ci { font-size:0.84rem; color:rgba(247,242,234,0.65); display:flex; gap:0.7rem; }
+.book-ci strong { color:var(--warm-white); font-weight:400; }
+.book-form { background:rgba(255,255,255,0.07); padding:2rem 1.5rem; border:1px solid rgba(255,255,255,0.1); margin-top:2.5rem; }
+.form-h { font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--warm-white); font-weight:300; margin-bottom:1.5rem; }
+.fg { margin-bottom:1rem; }
+.fg label { display:block; font-size:0.63rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(247,242,234,0.5); margin-bottom:0.35rem; }
+.fg input, .fg select, .fg textarea {
+  width:100%; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13);
+  color:var(--warm-white); padding:0.75rem 0.9rem; font-family:'Jost',sans-serif;
+  font-size:1rem; font-weight:300; outline:none; transition:border-color 0.3s;
+  -webkit-appearance:none; border-radius:0;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--gold); }
+.fg textarea { height:88px; resize:none; }
+.fg select option { background:var(--sage); }
+.btn-send {
+  width:100%; padding:0.9rem; background:var(--gold); color:var(--warm-white);
+  border:none; font-family:'Jost',sans-serif; font-size:0.78rem;
+  letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; transition:background 0.3s; margin-top:0.3rem;
+}
+.btn-send:hover { background:var(--terracotta); }
+@media (min-width:1000px) {
+  .booking { padding:6rem var(--pad); display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+  .book-form { margin-top:0; padding:2.5rem; }
+}
+
+/* ── FOOTER ── */
+footer { background:var(--ink); padding:3rem var(--pad) 2rem; }
+.ft-brand { margin-bottom:2rem; }
+.ft-logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; letter-spacing:0.08em; color:var(--warm-white); text-decoration:none; }
+.ft-tag { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.98rem; color:rgba(247,242,234,0.35); margin:0.8rem 0 1.2rem; line-height:1.6; }
+.ft-soc { display:flex; gap:0.8rem; }
+.ft-s { width:2.1rem; height:2.1rem; border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:rgba(247,242,234,0.4); font-size:0.7rem; text-decoration:none; transition:all 0.3s; }
+.ft-s:hover { border-color:var(--gold); color:var(--gold); }
+.ft-cols { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 2rem; padding:2rem 0; border-top:1px solid rgba(255,255,255,0.07); border-bottom:1px solid rgba(255,255,255,0.07); margin-bottom:1.5rem; }
+.ft-col h4 { font-size:0.63rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--warm-white); margin-bottom:0.9rem; }
+.ft-col a { display:block; font-size:0.82rem; color:rgba(247,242,234,0.4); text-decoration:none; padding:0.25rem 0; transition:color 0.3s; }
+.ft-col a:hover { color:var(--gold); }
+.ft-bot { font-size:0.7rem; color:rgba(247,242,234,0.3); display:flex; flex-direction:column; gap:0.4rem; }
+.ft-bot a { color:rgba(247,242,234,0.3); text-decoration:none; }
+@media (min-width:800px) {
+  footer { padding:4rem var(--pad) 2rem; }
+  .ft-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2.5rem; }
+  .ft-brand { margin-bottom:0; }
+  .ft-cols { grid-template-columns:repeat(3,1fr); }
+  .ft-bot { flex-direction:row; justify-content:space-between; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Empower Your Style</a>
+  <div class="nav-desktop">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#testimonials">Stories</a>
+    <a href="#book" class="nav-book">Book a Consult</a>
+  </div>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" class="ml">Services</a>
+  <a href="#about" class="ml">About</a>
+  <a href="#process" class="ml">Process</a>
+  <a href="#testimonials" class="ml">Stories</a>
+  <a href="#book" class="ml mob-cta">Book a Consult</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <div class="hero-img-word">Style</div>
+    <div class="hero-stat">
+      <div class="hero-stat-n">200+</div>
+      <div class="hero-stat-l">Women styled</div>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-eye">Personal Stylist · Auckland, NZ</div>
+    <h1 class="hero-h1">Style that <em>feels</em> like you</h1>
+    <p class="hero-p">Emilia helps Auckland women discover and own their personal style — through wardrobe edits, personal shopping, and complete style transformations.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="m-item">Personal Shopping</span><span class="m-dot">✦</span>
+    <span class="m-item">Wardrobe Edits</span><span class="m-dot">✦</span>
+    <span class="m-item">Event Styling</span><span class="m-dot">✦</span>
+    <span class="m-item">Style Strategy</span><span class="m-dot">✦</span>
+    <span class="m-item">Confidence &amp; Clarity</span><span class="m-dot">✦</span>
+    <span class="m-item">Auckland, NZ</span><span class="m-dot">✦</span>
+    <span class="m-item">Personal Shopping</span><span class="m-dot">✦</span>
+    <span class="m-item">Wardrobe Edits</span><span class="m-dot">✦</span>
+    <span class="m-item">Event Styling</span><span class="m-dot">✦</span>
+    <span class="m-item">Style Strategy</span><span class="m-dot">✦</span>
+    <span class="m-item">Confidence &amp; Clarity</span><span class="m-dot">✦</span>
+    <span class="m-item">Auckland, NZ</span><span class="m-dot">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="svc-head reveal">
+    <div>
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Services designed <em>around you</em></h2>
+    </div>
+    <p class="svc-intro">Every woman deserves to feel at home in her wardrobe. My services are personal, considered, and built to last beyond our time together.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <span class="svc-n">01</span>
+      <h3 class="svc-name">Personal Shopping</h3>
+      <p class="svc-desc">Skip the overwhelm. I shop alongside you — or for you — finding pieces that genuinely fit your life and budget.</p>
+      <ul class="svc-list">
+        <li>Pre-shop style consultation</li>
+        <li>Curated shopping itinerary</li>
+        <li>In-store or online</li>
+        <li>Post-shop outfit guide</li>
+      </ul>
+      <a href="#book" class="svc-link">Enquire →</a>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-n">02</span>
+      <h3 class="svc-name">Wardrobe Edit</h3>
+      <p class="svc-desc">Transform the wardrobe you already have — declutter, reorganise, and identify the gaps so every morning is easy.</p>
+      <ul class="svc-list">
+        <li>Full wardrobe audit</li>
+        <li>Keep / donate / alter</li>
+        <li>Outfit mapping session</li>
+        <li>Shopping gaps list</li>
+      </ul>
+      <a href="#book" class="svc-link">Enquire →</a>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-n">03</span>
+      <h3 class="svc-name">Styling Package</h3>
+      <p class="svc-desc">The complete experience — from aesthetic discovery to a capsule wardrobe you'll reach for every single day.</p>
+      <ul class="svc-list">
+        <li>Style discovery session</li>
+        <li>Colour &amp; body confidence</li>
+        <li>Wardrobe edit + shopping</li>
+        <li>Ongoing style support</li>
+      </ul>
+      <a href="#book" class="svc-link">Enquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img">
+    <div class="about-dots"></div>
+    <div class="about-qt">
+      <p>"Style isn't about clothes. It's about knowing who you are."</p>
+      <span>— Emilia</span>
+    </div>
+  </div>
+  <div class="about-txt reveal">
+    <div class="section-label">Meet Emilia</div>
+    <h2 class="section-title">Your style, my <em>expertise</em></h2>
+    <p class="about-p">I'm Emilia — an Auckland-based personal stylist who believes getting dressed should feel effortless. I work with women who are ready to stop guessing and start dressing with intention. Whether you're rebuilding after a life change, preparing for a new chapter, or simply ready to feel like yourself again — I'm here.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-n">Judgment-Free</div><div class="pillar-d">Every body, budget, and style welcome.</div></div>
+      <div class="pillar"><div class="pillar-n">Practical First</div><div class="pillar-d">Clothes for your real-world life.</div></div>
+      <div class="pillar"><div class="pillar-n">Lasting Change</div><div class="pillar-d">I teach you to style yourself.</div></div>
+      <div class="pillar"><div class="pillar-n">Auckland Local</div><div class="pillar-d">I know the best local boutiques.</div></div>
+    </div>
+    <a href="#book" class="btn-primary" style="background:var(--gold);border-color:var(--gold)">Work With Me</a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="proc-head reveal">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Your <em>journey</em> to effortless style</h2>
+  </div>
+  <div class="proc-steps">
+    <div class="proc-step reveal"><div class="step-circle">1</div><div class="step-name">Discovery Call</div><p class="step-desc">A free 20-minute chat to understand where you are and which service fits best.</p></div>
+    <div class="proc-step reveal"><div class="step-circle">2</div><div class="step-name">Style Deep Dive</div><p class="step-desc">We explore your lifestyle, goals, colour palette, and the pieces that light you up.</p></div>
+    <div class="proc-step reveal"><div class="step-circle">3</div><div class="step-name">The Transformation</div><p class="step-desc">Wardrobe edit, shopping day, or full package — we do the work together.</p></div>
+    <div class="proc-step reveal"><div class="step-circle">4</div><div class="step-name">Style for Life</div><p class="step-desc">You leave with the confidence to dress yourself beautifully, every day.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="test-head reveal">
+    <div class="section-label">Client Stories</div>
+    <h2 class="section-title">Real women, real <em>results</em></h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-q">"I haven't said 'I have nothing to wear' since Emilia edited my wardrobe. I actually love getting dressed now."</p>
+      <div class="test-auth"><div class="test-av"></div><div><div class="test-name">Sarah M.</div><div class="test-role">Wardrobe Edit, Auckland</div></div></div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-q">"Emilia understood my style better than I did. The shopping trip was fun, efficient, and I actually wear everything."</p>
+      <div class="test-auth"><div class="test-av" style="background:linear-gradient(135deg,#c4b09a,#8a7060)"></div><div><div class="test-name">Rachel T.</div><div class="test-role">Personal Shopping</div></div></div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-q">"The full package was worth every cent. I feel like a completely different woman — confident and genuinely myself."</p>
+      <div class="test-auth"><div class="test-av" style="background:linear-gradient(135deg,#a0b4a8,#3d5247)"></div><div><div class="test-name">Jess W.</div><div class="test-role">Full Styling Package</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="book">
+  <div class="book-left reveal">
+    <div class="section-label">Let's Begin</div>
+    <h2 class="section-title" style="color:var(--warm-white)">Ready to love getting <em>dressed</em>?</h2>
+    <p class="book-desc">Book a free discovery call. No commitment — just a friendly conversation with someone who genuinely loves this stuff.</p>
+    <div class="book-contact">
+      <div class="book-ci">📍 <span>Based in <strong>Auckland, New Zealand</strong></span></div>
+      <div class="book-ci">✉️ <span><strong>hello@empoweryourstyle.nz</strong></span></div>
+      <div class="book-ci">📸 <span><strong>@empoweryourstyle</strong> on Instagram</span></div>
+    </div>
+  </div>
+  <div class="book-form reveal">
+    <div class="form-h">Book a Free Consult</div>
+    <div class="fg"><label>Your Name</label><input type="text" placeholder="First &amp; Last Name"></div>
+    <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+    <div class="fg">
+      <label>I'm Interested In</label>
+      <select>
+        <option value="">Select a service...</option>
+        <option>Personal Shopping</option>
+        <option>Wardrobe Edit</option>
+        <option>Full Styling Package</option>
+        <option>Not sure — let's chat!</option>
+      </select>
+    </div>
+    <div class="fg"><label>Tell Me About Your Style Goals</label><textarea placeholder="What brought you here? What would you love to change?"></textarea></div>
+    <button class="btn-send">Send My Enquiry →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="#" class="ft-logo">Empower Your Style</a>
+      <p class="ft-tag">"Style is the language you speak<br>before you say a word."</p>
+      <div class="ft-soc">
+        <a href="#" class="ft-s">ig</a>
+        <a href="#" class="ft-s">fb</a>
+        <a href="#" class="ft-s">in</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-cols">
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="#">Personal Shopping</a>
+      <a href="#">Wardrobe Edit</a>
+      <a href="#">Styling Packages</a>
+      <a href="#">Gift Vouchers</a>
+    </div>
+    <div class="ft-col">
+      <h4>Navigate</h4>
+      <a href="#">About Emilia</a>
+      <a href="#">Process</a>
+      <a href="#">Client Stories</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <a href="#">Book a Consult</a>
+      <a href="#">hello@empoweryourstyle.nz</a>
+      <a href="#">Auckland, NZ</a>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2025 Empower Your Style with Emilia</span>
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+  // Hamburger / mobile menu
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mobMenu');
+  ham.addEventListener('click', () => {
+    const open = mob.classList.toggle('open');
+    ham.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
+    mob.classList.remove('open');
+    ham.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

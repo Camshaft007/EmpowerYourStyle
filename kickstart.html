@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover Emilia's Personal Shopping service. Let Emilia guide you on a shopping trip tailored to your style, personality, and budget.">
+        <meta name="keywords" content="Personal Stylist, Personal Shopping, Style Consultation, Auckland Stylist, Fashion Consultant">
+        <meta name="author" content="Empower Your Style">
+        <title>Style Kickstart Package | Empower Your Style</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="navigation-placeholder"></div>
+    <script>
+        fetch('NavigationBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navigation-placeholder').innerHTML = data;
+                // Load script.js after the navigation is inserted
+                const script = document.createElement('script');
+                script.src = 'script.js';
+                document.body.appendChild(script);
+            });
+    </script>
+
+
+
+
+    <!-- Personal Shopping Section -->
+    <section class="service-section">
+        <div class="service-container">
+            <img src="images/styling-packages.jpg" alt="Style Kickstart Package" class="service-photo">
+            <div class="service-text">
+                <h2>Style Kickstart | Package</h2>
+                <p>This is a perfect pick-me-up for those seeking a fresh and elevated wardrobe without committing to a full makeover. This package is designed to provide a quick and impactful styling experience, offering a virtual consultation, a peek into your wardrobe, and a personalized shopping session to add essential missing pieces.</p>
+                <p class="gap-after"></p>
+                <p>We'll kick off your style journey with a detailed virtual consultation that will include a peek into your wardrobe to understand your unique personality, lifestyle, style goals and any gaps that need to be filled.</p>
+                <p class="gap-after"></p>
+                <p>During our express targeted shopping session together, we'll focus on finding 5-8 essential pieces that will elevate your wardrobe and give it the much-needed boost. Whether it's versatile basics, statement accessories, or trendy accents, we'll curate a selection that aligns with your style and budget.</p>
+                <p class="gap-after"></p>
+                <p>Please note that this an introductory service to refresh your style and already existing wardrobe. It's perfect for those who want to explore new possibilities and add key pieces to their collection without committing to a complete makeover.
+                <p class="gap-after"></p>
+                <h3>Package Includes</h3>
+            <ul>
+                <li>45 Minute Virtual Style Consultation including Wardrobe Overview</li>
+                <li>30 Minutes Complimentary Pre-Shop (Stylist Only)</li>
+                <li>1.5 Hour Express Shopping Session </li>
+            </div>
+        </div>
+
+       
+    </section>
+    <!-- Package Links Section -->
+    <section class="package-links">
+        <h3>Explore More Packages</h3>
+        <div class="package-buttons">
+            <a href="refresh-my-style.html" class="package-button">Refresh My Style</a>
+            <a href="empowerment.html" class="package-button">Total Empowerment</a>
+            <a href="virtual-styling.html" class="package-button">Virtual Styling</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+
+   
+</body>
+</html>

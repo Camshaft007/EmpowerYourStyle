@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --navy: #17233f;
+  --blush: #e9b7b8;
+  --rose: #b96f78;
+  --cream: #fbf6ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fffaf5;
+  color: #1f2634;
+  font-family: Inter, "Avenir Next", "Segoe UI", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(233, 183, 184, 0.7);
+}
+
+.luxury-ring {
+  position: relative;
+}
+
+.luxury-ring::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 1px solid rgba(185, 111, 120, 0.28);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.reveal {
+  animation: reveal 720ms ease both;
+}
+
+.reveal-delay {
+  animation: reveal 840ms ease 120ms both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

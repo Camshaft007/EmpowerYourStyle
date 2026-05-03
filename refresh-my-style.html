@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Discover Emilia's Personal Shopping service. Let Emilia guide you on a shopping trip tailored to your style, personality, and budget.">
+        <meta name="keywords" content="Personal Stylist, Personal Shopping, Style Consultation, Auckland Stylist, Fashion Consultant">
+        <meta name="author" content="Empower Your Style">
+        <title>VIP
+         Package | Empower Your Style</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+
+     <!-- Navigation Bar -->
+     <div id="navigation-placeholder"></div>
+     <script>
+         fetch('NavigationBar.html')
+             .then(response => response.text())
+             .then(data => {
+                 document.getElementById('navigation-placeholder').innerHTML = data;
+                 // Load script.js after the navigation is inserted
+                 const script = document.createElement('script');
+                 script.src = 'script.js';
+                 document.body.appendChild(script);
+             });
+     </script>
+
+
+
+
+    <!-- Personal Shopping Section -->
+    <section class="service-section">
+        <div class="service-container">
+            <img src="images/Packages.jpg" alt="Refresh My Style Package" class="service-photo">
+            <div class="service-text">
+            
+                <h2>Refresh My Style | Package</h2>
+                <p>Do you ever find yourself buying clothes that end up just taking up space in your closet? Are you someone who makes impulsive purchases or feels overwhelmed by the options in your wardrobe? You're not alone! It's easy to get stuck in a style rut, and it can be tough to break out of it on your own.</p>
+                <p class="gap-after"></p>
+                <p>But fear not! This package is designed to help you "shop with purpose" by first identifying what's missing from your wardrobe, and then hitting the stores with a mission list to fill those gaps and pull it all together. You'll learn how to dress up or dress down outfits to suit your shape, budget, style, and lifestyle, all while gaining confidence in your ability to shop smarter.</p>
+                <p class="gap-after"></p>
+                <p>This package is perfect for anyone who wants to make the most of their existing wardrobe and feel more confident in their personal style. Let's work together to refresh your style and make getting dressed each morning a breeze!</p>
+                <p class="gap-after"></p>
+                <h3>Package Includes</h3>
+            <ul>
+                <li>30 Minute at Home Style Consultation</li>
+                <li>1 Hour Wardrobe Review</li>
+                <li>45 Minutes Complimentary Pre-Shop (Stylist Only)</li>
+                <li>3 Hour Shopping Session</li>
+                <li>Total of 4.5 Hours spent with ME</li>
+            </div>
+        </div>
+    
+    </section>
+    <!-- Package Links Section -->
+    <section class="package-links">
+        <h3>Explore More Packages</h3>
+        <div class="package-buttons">
+            <a href="kickstart.html" class="package-button">Style Kickstart</a>
+            <a href="empowerment.html" class="package-button">Total Empowerment</a>
+            <a href="virtual-styling.html" class="package-button">Virtual Styling</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+
+   
+</body>
+</html>

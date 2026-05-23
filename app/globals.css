@@ -4,10 +4,10 @@
 
 :root {
   color-scheme: light;
-  --navy: #17233f;
-  --blush: #e9b7b8;
-  --rose: #b96f78;
-  --cream: #fbf6ef;
+  --navy: #1e3028;
+  --blush: #d4b48c;
+  --rose: #a0624a;
+  --cream: #f7f0e6;
 }
 
 * {
@@ -20,14 +20,14 @@ html {
 
 body {
   margin: 0;
-  background: #fffaf5;
-  color: #1f2634;
+  background: #f7f0e6;
+  color: #2a1f14;
   font-family: Inter, "Avenir Next", "Segoe UI", Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(233, 183, 184, 0.7);
+  background: rgba(212, 180, 140, 0.7);
 }
 
 .luxury-ring {
@@ -38,7 +38,7 @@ body {
   content: "";
   position: absolute;
   inset: -10px;
-  border: 1px solid rgba(185, 111, 120, 0.28);
+  border: 1px solid rgba(160, 98, 74, 0.28);
   border-radius: 999px;
   pointer-events: none;
 }

@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
+const basePath = process.env.GITHUB_ACTIONS ? "/EmpowerYourStyle" : "";
+
 const nextConfig = {
   output: "export",
-  basePath: process.env.GITHUB_ACTIONS ? "/EmpowerYourStyle" : "",
+  basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   trailingSlash: true
 };

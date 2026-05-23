@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/SiteImage";
 import { ButtonLink } from "@/components/ButtonLink";
 import { SectionHeading } from "@/components/SectionHeading";
 import { services } from "@/data/site";

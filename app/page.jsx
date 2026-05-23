@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { InstagramStrip } from "@/components/InstagramStrip";
 import { SectionHeading } from "@/components/SectionHeading";
+import { StatsCounter } from "@/components/StatsCounter";
 import { services, testimonials } from "@/data/site";
 
 const trustItems = [
@@ -60,6 +63,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <StatsCounter />
 
       <section className="bg-white px-4 py-20 md:px-8">
         <SectionHeading eyebrow="Signature services" title="A calmer, more confident way to get dressed.">
@@ -146,6 +151,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FAQAccordion />
+
+      <InstagramStrip />
 
       <section className="bg-cream px-4 py-20 text-center md:px-8">
         <h2 className="mx-auto max-w-3xl font-serif text-4xl leading-tight text-navy md:text-5xl">
